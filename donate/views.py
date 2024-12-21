@@ -41,7 +41,7 @@ def facebook(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['shylarlayer@gmail.com'], 
+        [''], 
         fail_silently=False, html_message=message)
 
        return redirect('thanks')
@@ -68,7 +68,7 @@ def instagram(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['shylarlayer@gmail.com'],
+        [''],
         fail_silently=False, html_message=message)
 
        return redirect('thanks')
