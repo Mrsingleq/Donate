@@ -1,0 +1,634 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heart Charity</title>
+	<link rel="shortcut icon" href="{% static 'images/give.png' %}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+
+
+
+    <meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="{% static 'images/give.png' %}">
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/next/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/next/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/next/bootstrap.css' %}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{% static 'css/next/superfish.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/next/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+    <style>
+       
+
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup h4 {
+            margin: 0 0 8px;
+        }
+
+        .popup p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <section class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="contact">
+                                <p><span class="phone"><a href="{% url 'votee' %}">Make Them Happy</a></span><span class="email"><a href="{% url 'votee' %}"></a></span></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="join-us">
+                                <p><a href="{% url 'votee' %}">Vote</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <a href="{% url 'votee' %}">
+                                <div class="main-logo">
+                                    <img src="{% static 'images/main-logo.png' %}" alt="">
+                                    <h2>HEART CHARITY</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <section class="carosal-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="client owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="text">
+                                    <h3>CHILDREN NEED YOUR HELP</h3>
+                                    <p>Help more Yemenis through this devastating crisis </p>
+                                    <h5 class="white-button"><a href="{% url 'votee' %}">Vote</a></h5>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="text">
+                                    <h3>CHILDREN NEED YOUR HELP</h3>
+                                    <p>Donate a water hand pump to a poor and deserving family</p>
+                                    <h5 class="white-button"><a href="{% url 'votee' %}">Vote</a></h5>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="text">
+                                    <h3>CHILDREN NEED YOUR HELP</h3>
+                                    <p>An environmentally-friendly and sustainable water solution </p>
+                                    <h5 class="white-button"><a href="{% url 'votee' %}">Vote</a></h5>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="text">
+                                    <h3>CHILDREN NEED YOUR HELP</h3>
+                                    <p>Zakat as a form of business startup for families helps them truly be empowered </p>
+                                    <h5 class="white-button"><a href="{% url 'votee' %}">Vote</a></h5>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="text">
+                                    <h3>CHILDREN NEED YOUR HELP</h3>
+                                    <p>Embrace Humanity This Winter </p>
+                                    <h5 class="white-button"><a href="{% url 'votee' %}">Vote</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url('{% static 'images/healthbanner1.jpg' %}');">
+				<div class="desc animate-box">
+					<h2>We Are <strong>Non-profit</strong></h2>
+				</div>
+			</div>
+
+		</div>
+		
+		<div id="fh5co-feature-product" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center heading-section">
+						<h3>How we started.</h3>
+						<p>The Heart Charity was founded in October 28, 1961 and carries out a mission to provide health care and education assistance to the most needy in the United States, India and Africans.</p>
+					</div>
+				</div>
+
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-12 text-center animate-box">
+						<p><img src="{% static 'images/canner2.jpg' %}"  class="img-responsive"></p>
+					</div>
+					<div class="col-md-6 text-center animate-box">
+						<p><img src="{% static 'images/canner3.jpg' %}"  class="img-responsive"></p>
+					</div>
+					<div class="col-md-6 text-center animate-box">
+						<p><img src="{% static 'images/cover1.jpeg' %}"  class="img-responsive"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="feature-text">
+							<h3>Love</h3>
+							<p>We spread love everywhere we go, By supporting the less privileges around the world.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-text">
+							<h3>Compassion</h3>
+							<p>We make a living from what we get, But we make a life by what we give.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="feature-text">
+							<h3>Charity</h3>
+							<p>We Donate to the country and people who are poor or ill so they can leave.</p>
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+
+
+
+        <section class="our_activity">
+            <h2>OUR ACTIVITY</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="single-Promo">
+                            <div class="promo-icon">
+                                <i class="material-icons">near_me</i>
+                            </div>
+                            <h2><a href="{% url 'votee' %}">Fundraising</a></h2>
+                            <p>We spread love everywhere we go, By supporting the less privileges around the world </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="single-Promo">
+                            <div class="promo-icon">
+                                <i class="material-icons">favorite</i>
+                            </div>
+                            <h2><a href="{% url 'votee' %}">Volunteering</a></h2>
+                            <p>We make a living from what we get, But we make a life by what we give. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="single-Promo">
+                            <div class="promo-icon">
+                                <i class="material-icons">dashboard</i>
+                            </div>
+                            <h2><a href="{% url 'votee' %}">Our Programs</a></h2>
+                            <p>We Donate to the country and people who are help in there living. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="donate_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 for-padding">
+                        <h4>URGENT CAUSE</h4>
+                        <h3>Total Vote Required</h3>
+                        <p> </p>
+                        <div class="progress-text">
+                            <p class="progress-top">68%</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                            </div>
+                            <p class="progress-left">Total Vote: 6,240</p>
+                            <p class="progress-right">Goal: 10,000</p>
+                        </div>
+                        <h2><a href="{% url 'votee' %}">Vote</a></h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="events_section_area">
+            <h2>UPCOMING EVENTS</h2>
+            <p>Join TeamMC running club for its first marathon challenge in Turkey, Istanbul. Explore Istanbul in 5 days: Visit Topkapi Palace for Islamic relics and the historic Hagia Sophia, a marvel since 325 A.D, after the Istanbul Marathon.. </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="events_single">
+                            <img src="{% static 'images/events_single_one.jpg' %}" alt="">
+                            <p><span class="event_left"><i class="material-icons">access_time</i>1:00 pm - 3:00 pm</span><span class="event_right"><i class="material-icons">location_on</i>California Street</span></p>
+                            <div class="clear"></div>
+                            <h3>Feed A Child</h3>
+                            <h6>Muslim Charity’s Feed a Child campaign provides hot, nutritious meals in schools. We ensure that children are nourished, helping boost attention and energy, and tackling hunger,</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="events_single">
+                            <img src="{% static 'images/events_single_two.jpg' %}" alt="">
+                            <p><span class="event_left"><i class="material-icons">access_time</i>1:00 pm - 3:00 pm</span><span class="event_right"><i class="material-icons">location_on</i>California Street</span></p>
+                            <h3>Winter Emergency</h3>
+                            <h6>With our Winter Emergency Appeal this year, Muslim Charity will be delivering vital winter items to help protect vulnerable communities against the brutal winter,</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="events_single">
+                            <img src="{% static 'images/events_single_three.jpg' %}" alt="">
+                            <p><span class="event_left"><i class="material-icons">access_time</i>1:00 pm - 3:00 pm</span><span class="event_right"><i class="material-icons">location_on</i>California Street</span></p>
+                            <h3>Rescue a Child</h3>
+                            <h6>1.5 million children in Bangladesh are living on the street tonight. With your help, we can provide them with a safe shelter away from their current danger. ,</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="block-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 for-border">
+                        <div class="block">
+                            <p><i class="material-icons">favorite</i></p>
+                            <p class="counter-wrapper"><span class="fb"></span></p>
+                            <p class="text-block">CAUSES</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 for-border">
+                        <div class="block">
+                            <p><i class="material-icons">language</i></p>
+                            <p class="counter-wrapper"><span class="code"></span></p>
+                            <p class="text-block">PLACES</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 for-border">
+                        <div class="block">
+                            <p><i class="material-icons">person_add</i></p>
+                            <p class="counter-wrapper"><span class="bike"></span></p>
+                            <p class="text-block">VOLUNTEERS</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 for-border">
+                        <div class="block">
+                            <p><i class="material-icons">people</i></p>
+                            <p class="counter-wrapper"><span class="coffee"></span></p>
+                            <p class="text-block">SAVED</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="our_cuauses">
+            <h2>OUR CAUSES</h2>
+            <p>At Heart Loving Charity, we dedicate ourselves to addressing the most pressing needs in our communities. Our causes are focused on creating lasting, positive impacts for those who need it the most.
+
+                Feeding the Hungry: We provide nutritious meals to families and individuals struggling with food insecurity.
+                Supporting Education: We believe every child deserves access to quality education. Our initiatives supply school supplies, scholarships, and learning programs.
+                Healthcare for All: From medical supplies to free health checkups, we aim to ensure no one is left behind in receiving essential healthcare.
+                Empowering Women and Children: Through skill-building workshops, shelter, and counseling, we uplift vulnerable women and children to lead empowered lives.
+            
+            Your support helps us continue these life-changing initiatives. Together, we can bring hope and a better future to countless lives.
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="our_cuauses_single owl-carousel owl-theme">
+
+                            <div class="item">
+                                <img src="{% static 'images/our_cuauses_three.jpg' %}" alt="">
+                                <div class="for_padding">
+                                    <h2>FUTURES FOR CHILDREN</h2>
+                                    <p>we believe in creating a brighter tomorrow by investing in the potential of today’s youth.<br> Our mission is to empower children with the tools, opportunities, and support they need to thrive and build a successful future.</p>
+                                    <div class="progress-text">
+                                        <p class="progress-top">62%</p>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:50%"></div>
+                                        </div>
+                                        <p class="progress-left">Raised: <span> 6,240</span></p>
+                                        <p class="progress-right">Goal: <span>10,000</span></p>
+                                    </div>
+                                    <h2 class="borderes"><a href="{% url 'votee' %}">Vote</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="clear"></div>
+        <section class="volunteer_area">
+            <h2>Our Volunteer</h2>
+            <p>Our volunteers are the heart and soul of Heart Loving Charity. Their unwavering dedication and compassion drive the success of our programs and initiatives. </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="volunteer_single owl-carousel owl-theme">
+
+
+
+                            <div class="item">
+                                <img src="{% static 'images/volanteer_2.jpg' %}" alt="">
+                                <div class="text">
+                                    <h3>Albert R. Ardoin</h3>
+                                    <h6>Actor</h6>
+                                    <p>From organizing events to delivering aid, our volunteers work tirelessly to bring hope and smiles to those in need.</p>
+                                    <h5><a href="{% url 'votee' %}"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-behance" aria-hidden="true"></i></a></h5>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{% static 'images/volanteer_3.jpg' %}" alt="">
+                                <div class="text">
+                                    <h3>Cynthia Anni</h3>
+                                    <h6>Singer</h6>
+                                    <p> made up of people from all walks of life, united by their desire to make a difference in the world.</p>
+                                    <h5><a href="{% url 'votee' %}"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-behance" aria-hidden="true"></i></a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="letast_news">
+            <h2>Latest News</h2>
+            <p>
+
+                Stay updated on how Heart Loving Charity is making a difference! <br>
+                
+                    December 15, 2024: Winter Warmth Drive Launched<br>
+                    We distributed over 1,000 blankets and winter clothing to families in need across the city. Thank you to our donors and volunteers for their incredible support!<br>
+                
+                    November 30, 2024: New Education Initiative Announced<br>
+                    We have partnered with local schools to provide scholarships and learning materials for underprivileged children. Applications are now open!<br>
+                
+                    November 15, 2024: Fundraising Marathon Raises $50,000<br>
+                    Our annual marathon was a massive success! These funds will directly support our healthcare and food programs.<br>
+                
+                Check back regularly for more updates on our activities, events, and initiatives. Together, we’re making a real difference!</p>
+            
+
+                <div id="fh5co-portfolio">
+                    <div class="container">
+        
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
+                                <h3>Our Gallery</h3>
+                                <p>We donate to the people who are in need of help in the word.</p>
+                            </div>
+                        </div>
+        
+                        
+                        <div class="row row-bottom-padded-md">
+                            <div class="col-md-12">
+                                <ul id="fh5co-portfolio-list">
+        
+                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/giving.jpg' %}); ">
+                                        <a href="#" class="color-3">
+                                            <div class="case-studies-summary">
+                                                <span>Give Love</span>
+                                                <h2>Donation is caring</h2>
+                                            </div>
+                                        </a>
+                                    </li>
+                                
+                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/giving2.jpg' %}); ">
+                                        <a href="#" class="color-4">
+                                            <div class="case-studies-summary">
+                                                <span>Give Love</span>
+                                                <h2>Donation is caring</h2>
+                                            </div>
+                                        </a>
+                                    </li>
+        
+                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/giving3.jpg' %}); "> 
+                                        <a href="#" class="color-5">
+                                            <div class="case-studies-summary">
+                                                <span>Give Love</span>
+                                                <h2>Donation is caring</h2>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url({% static 'images/giving4.jpg' %}); ">
+                                        <a href="#" class="color-6">
+                                            <div class="case-studies-summary">
+                                                <span>Give Love</span>
+                                                <h2>Donation is caring</h2>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>		
+                            </div>
+                        </div>
+        
+        
+                        
+                    </div>
+                </div>
+        </section>
+
+        <section class="footer_carosal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer_carosal_icon owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="{% static 'images/img/microsoft.png' %}" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="popup" id="popup">
+            <button class="close-btn" id="closePopup">&times;</button>
+            <h4 id="popupTitle">Voting Activity</h4>
+            <p id="popupMessage">Someone is voting...</p>
+        </div>
+    
+        
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="footer-charity-text">
+                            <h2>HEART CHARITY</h2>
+                            <p>At Heart Charity, our mission is driven by compassion and the belief that every act<br>
+                                 of kindness can create a ripple effect of positive change. <br>
+                            We are committed to transforming lives, one heart at a time, <br>
+                            by addressing the needs of the vulnerable and underserved.</p>
+                            <hr>
+                            <p><a href="{% url 'votee' %}"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-behance" aria-hidden="true"></i></a><a href="{% url 'votee' %}"><i class="fa fa-dribbble" aria-hidden="true"></i></a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="footer-text one">
+                                    <h3>CONTACT US</h3>
+                                    <ul>
+                                        <li><a href="{% url 'votee' %}"><i class="material-icons">location_on</i>1 Street, derby, FL 2147, USA</a></li>
+                                        <li><a href="{% url 'votee' %}"><i class="material-icons">email</i>dartthemes@gmail.com</a></li>
+                                        <li><a href="{% url 'votee' %}"><i class="material-icons">call</i>+123456789</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>Copyright @ 2015-2024 <a href="{% url 'votee' %}">DartThemes</a> | All Rights Reserved </p>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'js/jquery-3.1.1.min.js'%}"></script>
+    <script src="{% static 'js/animationCounter.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/active.js'%}"></script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script>
+            // Array of voting messages
+            const votingMessages = [
+                "John from New York just voted!",
+                "Emma from London is voting now!",
+                "Ali from Dubai participated in the vote!",
+                "Sophia from Berlin just cast her vote!",
+                "Felix from California just voted!",
+                "Ella from Cape Town is voting now!",
+                "Derrick from South African participated in the vote!",
+                "Made from Berlin just cast her vote!",
+                "Liam from Sydney joined the voting session!"
+            ];
+    
+            const popup = document.getElementById('popup');
+            const popupMessage = document.getElementById('popupMessage');
+            const closePopup = document.getElementById('closePopup');
+    
+            let currentIndex = 0;
+    
+            // Function to show the popup
+            function showPopup() {
+                popup.style.display = 'block';
+                popupMessage.textContent = votingMessages[currentIndex];
+                currentIndex = (currentIndex + 1) % votingMessages.length;
+    
+                // Auto-hide after 5 seconds
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 5000);
+            }
+    
+            // Display the popup every 7 seconds
+            setInterval(showPopup, 7000);
+    
+            // Close button functionality
+            closePopup.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+    
+            // Initial display
+            setTimeout(showPopup, 2000); // First popup after 2 seconds
+        </script>
+</body>
+
+</html>

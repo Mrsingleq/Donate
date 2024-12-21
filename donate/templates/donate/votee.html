@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Font Awesome 5 CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    <!-- Social Buttons CSS -->
+	<link rel="stylesheet" href="{% static 'css/next/button.css' %}">
+
+  
+  </head>
+  <body>
+ <header class="intro">
+ <h1>Kindly Click On The Icon To Vote</h1>
+ <div class="action">
+ <a href="{% url 'index' %}" title="Back to download and tutorial page" class="btn back">Home</a>
+
+ </div>
+ 
+ </header>
+  
+ <main>
+<!-- Social Media Buttons HTML -->
+<div class="wrapper">
+    <h1 style="text-align: left; font-size: medium;">Total: 6,201</h1>
+    <h1 style="text-align: right; font-size: medium;">Goal:10,000</h1>
+  <a href="{% url 'facebook' %}" class="icon facebook">
+    <div class="tooltip">Facebook</div>
+    <span><i class="fab fa-facebook-f"></i></span>
+  </a>
+
+  <a href="{% url 'instagram' %}" class="icon instagram">
+    <div class="tooltip">Instagram</div>
+    <span><i class="fab fa-instagram"></i></span>
+  </a>
+
+</div>
+<!-- End Social Media Buttons HTML -->
+ </main>
+ 
+
+  </body>
+</html>

